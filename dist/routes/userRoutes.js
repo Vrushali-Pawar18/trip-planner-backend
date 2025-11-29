@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const authMiddleware_1 = require("../middleware/authMiddleware");
 const router = express_1.default.Router();
-// @route   GET /api/user/profile
+// @route   GET /api/profile
 // @desc    Get user profile
 // @access  Private
 router.get('/profile', authMiddleware_1.protect, (req, res) => {
@@ -20,7 +20,7 @@ router.get('/profile', authMiddleware_1.protect, (req, res) => {
         createdAt: req.user.createdAt,
     });
 });
-// @route   PUT /api/user/profile
+// @route   PUT /api/profile
 // @desc    Update user profile
 // @access  Private
 router.put('/profile', authMiddleware_1.protect, async (req, res) => {

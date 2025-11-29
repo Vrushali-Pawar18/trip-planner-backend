@@ -8,7 +8,7 @@ interface AuthRequest extends express.Request {
 
 const router = express.Router();
 
-// @route   GET /api/user/profile
+// @route   GET /api/profile
 // @desc    Get user profile
 // @access  Private
 router.get('/profile', protect, (req: AuthRequest, res: Response) => {
@@ -24,7 +24,7 @@ router.get('/profile', protect, (req: AuthRequest, res: Response) => {
     });
 });
 
-// @route   PUT /api/user/profile
+// @route   PUT /api/profile
 // @desc    Update user profile
 // @access  Private
 router.put('/profile', protect, async (req: AuthRequest, res: Response) => {

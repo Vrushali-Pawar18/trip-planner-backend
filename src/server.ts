@@ -27,7 +27,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.use('/api/auth', authRoutes);
-app.use('/api/user', userRoutes);
+app.use('/api', userRoutes);
 
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {

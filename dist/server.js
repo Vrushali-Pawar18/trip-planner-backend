@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
     res.send('API is running...');
 });
 app.use('/api/auth', authRoutes_1.default);
-app.use('/api/user', userRoutes_1.default);
+app.use('/api', userRoutes_1.default);
 // Error handling middleware
 app.use((err, req, res, next) => {
     const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
