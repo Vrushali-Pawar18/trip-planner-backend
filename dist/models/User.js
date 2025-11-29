@@ -42,6 +42,9 @@ const UserSchema = new mongoose_1.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
+    avatar: { type: String, default: "" },
+    bio: { type: String, default: "" },
+    location: { type: String, default: "" },
     createdAt: { type: Date, default: Date.now },
 });
 // Hash password before saving

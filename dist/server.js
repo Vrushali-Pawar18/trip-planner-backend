@@ -11,6 +11,8 @@ const morgan_1 = __importDefault(require("morgan"));
 const db_1 = __importDefault(require("./config/db"));
 const authRoutes_1 = __importDefault(require("./routes/authRoutes"));
 const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
+const tripRoutes_1 = __importDefault(require("./routes/tripRoutes"));
+const uploadRoutes_1 = __importDefault(require("./routes/uploadRoutes"));
 // Load env vars
 dotenv_1.default.config();
 // Connect to database
@@ -26,7 +28,9 @@ app.get('/', (req, res) => {
     res.send('API is running...');
 });
 app.use('/api/auth', authRoutes_1.default);
-app.use('/api', userRoutes_1.default);
+app.use('/api/users', userRoutes_1.default);
+app.use('/api/trips', tripRoutes_1.default);
+app.use('/api/upload', uploadRoutes_1.default);
 // Error handling middleware
 app.use((err, req, res, next) => {
     const statusCode = res.statusCode === 200 ? 500 : res.statusCode;

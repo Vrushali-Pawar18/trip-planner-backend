@@ -58,3 +58,24 @@ export const logout = (req: Request, res: Response) => {
     // However, we can send a success message.
     res.status(200).json({ message: 'Logged out successfully' });
 };
+
+export const getMe = async (req: any, res: Response) => {
+    try {
+        const user = await User.findById(req.user._id);
+        if (user) {
+            res.json({
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+                avatar: user.avatar,
+                bio: user.bio,
+                location: user.location,
+                createdAt: user.createdAt,
+            });
+        } else {
+            res.status(404).json({ message: 'User not found' });
+        }
+    } catch (error: any) {
+        res.status(500).json({ message: error.message });
+    }
+};
