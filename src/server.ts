@@ -6,7 +6,7 @@ import morgan from 'morgan';
 import connectDB from './config/db';
 import authRoutes from './routes/authRoutes';
 import userRoutes from './routes/userRoutes';
-import tripRoutes from './routes/trip.routes';
+import tripRoutes from './routes/trips';
 import uploadRoutes from './routes/uploadRoutes';
 
 // Load env vars
