@@ -11,7 +11,7 @@ const morgan_1 = __importDefault(require("morgan"));
 const db_1 = __importDefault(require("./config/db"));
 const authRoutes_1 = __importDefault(require("./routes/authRoutes"));
 const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
-const tripRoutes_1 = __importDefault(require("./routes/tripRoutes"));
+const trip_routes_1 = __importDefault(require("./routes/trip.routes"));
 const uploadRoutes_1 = __importDefault(require("./routes/uploadRoutes"));
 // Load env vars
 dotenv_1.default.config();
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 });
 app.use('/api/auth', authRoutes_1.default);
 app.use('/api/users', userRoutes_1.default);
-app.use('/api/trips', tripRoutes_1.default);
+app.use('/api/trips', trip_routes_1.default);
 app.use('/api/upload', uploadRoutes_1.default);
 // Error handling middleware
 app.use((err, req, res, next) => {
